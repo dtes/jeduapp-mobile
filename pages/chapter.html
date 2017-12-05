@@ -1,0 +1,56 @@
+<!-- We don't need full layout in this file because this page will be parsed with Ajax. It is just enough to put here .navbar and .page-->
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="left">
+      <a href="#" class="back link">
+        <i class="icon icon-back"></i>
+        <!-- <span>Back</span> -->
+       </a>
+    </div>
+    <div class="center">{{name}}</div>
+    <div class="right">
+      <!-- <a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a> -->
+    </div>
+  </div>
+</div>
+ 
+<!-- Top Navbar-->
+<div class="pages">
+  <div data-page="chapter" data-jsclass="pages.Chapter" class="page page-chapter no-tabbar toolbar-fixed navbar-fixed">
+
+    <div class="page-content">
+      <div class="content-block">
+        <!-- <p>{{name}}</p> -->
+
+        <!-- Subchapters -->
+        <!-- Slider -->
+        <div class="swiper-container swiper-init" data-speed="400" data-space-between="50" data-pagination=".swiper-pagination">
+          <div class="swiper-wrapper">
+            {{#each subChapters.data}}
+              <div class="swiper-slide">
+                <div class="subchapter" data-subchapterid="{{data.id}}" data-subchaptername="{{data.name}}">
+                  
+                  <div class="result {{#if data.train}}{{else}}hidden{{/if}}">
+                    {{data.result}}%
+                  </div>  
+
+                  <div class="title">{{data.name}}</div>
+
+                  <div class="subchapter-icon-container">
+                    <div class="subchapter-icon"></div>
+                  </div>
+
+                  <div class="btn-container">
+                    <div class="btn-open-subchapter">{{#if data.train}}Повторить{{else}}Начать{{/if}}</div>
+                  </div>
+
+                </div>
+              </div>
+            {{/each}}
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,56 @@
+<!-- We don't need full layout in this file because this page will be parsed with Ajax. It is just enough to put here .navbar and .page -->
+
+<!-- Top Navbar-->
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="left">
+      <a href="#" class="back link">
+        <i class="icon icon-cancel-1"></i>
+        <!-- <span>Back</span> -->
+       </a>
+    </div>
+    <div class="center">{{name}}</div>
+    <div class="right">
+      <!-- <a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a> -->
+    </div>
+  </div>
+</div>
+
+<div class="pages">
+  <div data-page="testing" data-jsclass="pages.Testing" class="page page-testing no-tabbar navbar-fixed no-swipeback" >
+
+    <div class="page-content">
+      <div class="content-block">
+        
+        <div class=question-counter></div>
+        
+        <div class="question-wrapper">
+          <div class="empty-text">Пусто</div>
+        </div>
+        
+        <div class="question-nav">
+          <a class="btn-nav-question prev hidden">Пред.</a>
+          <div class="btn-nav-space"></div>
+          <a class="btn-nav-question next">След.</a>
+        </div>
+
+        <div class="btn-container">
+            <div class="button button-round button-fill color-green btn-finish hidden">Завершить</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- template for rendering a question into '.question' container -->
+    <script id="tmlQuestion" type="text/template7">
+      <div class="question" data-id="[[id]]">
+        <div class="question-name">[[name]]</div>
+        <div class="question-variants">
+          [[#each variants]]
+            <div class="question-variant" data-id="[[id]]">[[name]]</div>
+          [[/each]]
+        </div>
+      </div>
+    </script>
+
+  </div>
+</div>

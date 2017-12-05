@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Required meta tags-->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <title>EduApp</title>
+
+  <link rel="stylesheet" href="external/framework7/css/framework7.ios.min.css">
+  <link rel="stylesheet" href="external/framework7/css/framework7.ios.colors.min.css">
+
+  <link rel="stylesheet" type="text/css" href="external/fontello/css/fontello.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+  <!-- Views -->
+  <!-- Tabs, now tabs wrapper is "views" -->
+  <div class="views tabs toolbar-fixed">
+
+    <!-- Tab 1 - View 1, active by default -->
+    <div id="tab1" class="view tab active">
+      <!-- <div class="pages navbar-fixed"> -->
+        <div class="navbar">
+          <div class="navbar-inner">
+            <div class="center">Предмет</div>
+          </div>
+        </div>
+        <div class="pages">
+          <div data-page="home-1" class="page navbar-fixed" data-jsclass="pages.Index">
+            <div class="page-content">
+
+              <div class="content-block">
+                <div class="row chapter-list"></div>
+              </div>
+            </div>
+
+
+            <!-- template for rendering chapters into '.chapter-list' container -->
+            <script id="tmlChapters" type="text/template7">
+              [[#each chapters.data]]
+              <div class="col-[[this.data.col]]">
+                <div class="chapter-item" data-id="[[this.data.id]]" data-name="[[this.data.name]]">
+                  <div class="chapter-icon"></div>
+                  <div class="chapter-title">[[this.data.name]]</div>
+                </div>
+              </div>
+              [[/each]]
+            </script>
+          </div>
+        </div>
+
+
+      </div>
+
+      <!-- Tab 2 - View 2 -->
+      <div id="tab2" class="view tab">
+        <div class="navbar">
+          <div class="navbar-inner">
+            <div class="center">Статистика</div>
+          </div>
+        </div>
+        <div class="pages">
+          <div data-page="home-3" class="page navbar-fixed">
+            <div class="page-content">
+              <div class="content-block">
+                <p>Показатели ученика</p>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab 3 - View 3 -->
+      <div id="tab3" class="view tab">
+        <div class="navbar">
+          <div class="navbar-inner">
+            <div class="center">Батл</div>
+          </div>
+        </div>
+        <div class="pages">
+          <div data-page="home-2" class="page navbar-fixed">
+            <div class="page-content">
+              <div class="content-block">
+                <p>Батл между пользователями</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+
+      
+      <!-- Tab bar with tab links -->
+      <div class="toolbar toolbar-bottom tabbar">
+        <div class="toolbar-inner">
+          <a href="#tab1" class="tab-link active"><i class="icon icon-home"></i></a>
+          <a href="#tab2" class="tab-link"><i class="icon icon-chart-bar"></i></a>
+          <a href="#tab3" class="tab-link"><i class="icon icon-user"></i></a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Path to Framework7 Library JS-->
+    <script type="text/javascript" src="external/framework7/js/framework7.min.js"></script>
+    <!-- <script type="text/javascript" src="external/jquery-utils.js"></script> -->
+
+    <!-- Path to your app js-->
+    <script type="text/javascript" src="utils.js"></script>
+    <script type="text/javascript" src="mb.js"></script>
+    <!--  -->
+    <script type="text/javascript" src="index.js"></script>
+    <script type="text/javascript" src="pages/chapter.js"></script>
+    <script type="text/javascript" src="pages/testing.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+  </body>
+  </html> 
